@@ -1,10 +1,17 @@
+.portfolio_subtitle {
+    font-size: 0.9rem;
+    opacity: 0.55;
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+}
+
 .po_items_ho {
     column-width: 15em;
     -moz-column-width: 15em;
     -webkit-column-width: 15em;
-    column-gap: 4rem;
-    -moz-column-gap: 4rem;
-    -webkit-column-gap: 4rem;
+    column-gap: 1.5rem;
+    -moz-column-gap: 1.5rem;
+    -webkit-column-gap: 1.5rem;
 }
 
 .po_item {
@@ -14,67 +21,80 @@
     margin: 0.5rem auto;
     position: relative;
     background: var(--secondary-color);
-    padding: 6px;
-    border: 1px solid var(--secondary-color);
-    transition: 0.3s ease;
+    padding: 5px;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     font-size: 0;
-    min-height: 300px;
+    min-height: 200px;
+    overflow: hidden;
+}
+
+[data-theme="light"] .po_item {
+    border: 1px solid #ddd;
 }
 
 .po_item img {
     max-width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.po_item:hover img {
+    transform: scale(1.05);
 }
 
 .po_item .content {
     position: absolute;
-    height: 0;
-    width: 0;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
     background: var(--overlay-color);
     z-index: 1;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    height: 100%;
-    width: 100%;
-    transition: 0.3s ease-in-out;
+    padding: 20px;
+    transition: opacity 0.35s ease;
     opacity: 0;
-    border: 1px solid black;
 }
 
-.po_item .content {
-    opacity: 0;
-    transition-delay: 1s;
-    transition: 0.3s ease;
-    font-size: 20px;
+.po_item .content p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-bottom: 18px;
+    line-height: 1.5;
+    font-style: italic;
+    opacity: 0.9;
 }
 
 .po_item:hover {
-    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.25);
-}
-
-.po_item:hover .content {
-    height: calc(100% - 30px);
-    width: calc(100% - 30px);
-    opacity: 1;
+    box-shadow: 0 14px 35px rgba(0,0,0,0.4);
+    transform: translateY(-4px);
+    border-color: rgba(204,0,0,0.3);
 }
 
 .po_item:hover .content {
     opacity: 1;
-    color: var(--secondary-color);
 }
 
 .po_item .content a {
-    background: var(--bg-color);
-    border: solid 1px var(--text-color);
-    padding: 4px 8px;
+    background: transparent;
+    border: 2px solid var(--text-color);
+    padding: 8px 22px;
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.82rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 5px;
 }
 
 .po_item .content a:hover {
-    text-decoration: none;
+    background: #cc0000;
+    border-color: #cc0000;
+    color: #fff;
 }

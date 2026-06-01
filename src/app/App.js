@@ -8,6 +8,8 @@ import withRouter from "../hooks/withRouter";
 import AppRoutes from "./routes";
 import Headermain from "../header";
 import AnimatedCursor  from "../hooks/AnimatedCursor";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "./App.css";
 
 function _ScrollToTop(props) {
@@ -20,6 +22,10 @@ function _ScrollToTop(props) {
 const ScrollToTop = withRouter(_ScrollToTop);
 
 export default function App() {
+  useEffect(() => {
+    AOS.init({ duration: 800, once: true, offset: 80 });
+  }, []);
+
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <div className="cursor__dot">
