@@ -1,70 +1,91 @@
-import React, { useState } from "react";
-import "./style.css";
-import { VscGrabber, VscClose } from "react-icons/vsc";
-import { Link } from "react-router-dom";
-import { logotext ,socialprofils } from "../content_option";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { logotext } from "../content_option";
 import Themetoggle from "../components/themetoggle";
+import "./style.css";
+
+const NAV_LINKS = [
+  { to: "/",          label: "Home"      },
+  { to: "/about",     label: "About"     },
+  { to: "/portfolio", label: "Portfolio" },
+  { to: "/contact",   label: "Contact"   },
+];
 
 const Headermain = () => {
-  const [isActive, setActive] = useState("false");
+  const [scrolled,  setScrolled]  = useState(false);
+  const [menuOpen,  setMenuOpen]  = useState(false);
+  const location = useLocation();
 
-  const handleToggle = () => {
-    setActive(!isActive);
-    document.body.classList.toggle("ovhidden");
-  };
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // close mobile menu on route change
+  useEffect(() => { setMenuOpen(false); }, [location]);
 
   return (
     <>
-      <header className="fixed-top site__header">
-        <div className="d-flex align-items-center justify-content-between">
-          <Link  className="navbar-brand nav_ac" to="/">
-            {logotext}
-          </Link>
-          <div className="d-flex align-items-center">
-          <Themetoggle />
-          <button className="menu__button  nav_ac" onClick={handleToggle}>
-            {!isActive ? <VscClose /> : <VscGrabber />}
-          </button>
-          
-          </div>
-        </div>
+      <header className={`nav_root${scrolled ? " scrolled" : ""}`}>
+        <div className="nav_inner">
 
-        <div className={`site__navigation ${!isActive ? "menu__opend" : ""}`}>
-          <div className="bg__menu h-100">
-            <div className="menu__wrapper">
-              <div className="menu__container p-3">
-                <ul className="the_menu">
-                  <li className="menu_item ">
-                  <Link  onClick={handleToggle} to="/" className="my-3">Home</Link>
-                  </li>
-                  <li className="menu_item">
-                    <Link  onClick={handleToggle} to="/portfolio" className="my-3"> Portfolio</Link>
-                  </li>
-                  <li className="menu_item">
-                  <Link onClick={handleToggle} to="/about" className="my-3">About</Link>
-                  </li>
-                  <li className="menu_item">
-                  <Link onClick={handleToggle} to="/contact" className="my-3"> Contact</Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="menu_footer d-flex flex-column flex-md-row justify-content-between align-items-md-center position-absolute w-100 p-3">
-            <div className="d-flex">
-              <a href={socialprofils.youtube}>YouTube</a>
-              <a href={socialprofils.instagram}>Instagram</a>
-              <a href={socialprofils.facebook}>Facebook</a>
-            </div>
-            <p className="copyright m-0">© 2024 {logotext} — Video Agency</p>
+          {/* ── Logo ── */}
+          <Link to="/" className="nav_logo">
+            <span className="logo_main">{logotext}</span>
+            <span className="logo_dot">.</span>
+            <span className="logo_corp">CORP</span>
+          </Link>
+
+          {/* ── Desktop links ── */}
+          <nav className="nav_links">
+            {NAV_LINKS.map(({ to, label }) => (
+              <Link
+                key={to}
+                to={to}
+                className={`nav_link${location.pathname === to ? " active" : ""}`}
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
+
+          {/* ── Right controls ── */}
+          <div className="nav_right">
+            <Themetoggle />
+            <Link to="/contact" className="nav_cta">
+              Enquire Now <span className="cta_arrow">→</span>
+            </Link>
+            <button
+              className={`hamburger${menuOpen ? " open" : ""}`}
+              onClick={() => setMenuOpen(v => !v)}
+              aria-label="Toggle menu"
+            >
+              <span /><span /><span />
+            </button>
           </div>
         </div>
       </header>
-      <div className="br-top"></div>
-      <div className="br-bottom"></div>
-      <div className="br-left"></div>
-      <div className="br-right"></div>
-      
+
+      {/* ── Mobile drawer ── */}
+      <div className={`mobile_drawer${menuOpen ? " open" : ""}`}>
+        <div className="mobile_drawer_inner">
+          {NAV_LINKS.map(({ to, label }) => (
+            <Link
+              key={to}
+              to={to}
+              className={`mobile_link${location.pathname === to ? " active" : ""}`}
+              onClick={() => setMenuOpen(false)}
+            >
+              {label}
+            </Link>
+          ))}
+          <Link to="/contact" className="mobile_cta" onClick={() => setMenuOpen(false)}>
+            Enquire Now →
+          </Link>
+        </div>
+      </div>
+      {menuOpen && <div className="drawer_overlay" onClick={() => setMenuOpen(false)} />}
     </>
   );
 };

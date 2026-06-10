@@ -1,100 +1,207 @@
-.portfolio_subtitle {
-    font-size: 0.9rem;
-    opacity: 0.55;
-    line-height: 1.7;
-    letter-spacing: 0.5px;
-}
-
-.po_items_ho {
-    column-width: 15em;
-    -moz-column-width: 15em;
-    -webkit-column-width: 15em;
-    column-gap: 1.5rem;
-    -moz-column-gap: 1.5rem;
-    -webkit-column-gap: 1.5rem;
-}
-
-.po_item {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-    margin: 0.5rem auto;
-    position: relative;
-    background: var(--secondary-color);
-    padding: 5px;
-    border: 1px solid rgba(255,255,255,0.08);
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    font-size: 0;
-    min-height: 200px;
-    overflow: hidden;
-}
-
-[data-theme="light"] .po_item {
-    border: 1px solid #ddd;
-}
-
-.po_item img {
-    max-width: 100%;
-    display: block;
-    transition: transform 0.5s ease;
-}
-
-.po_item:hover img {
-    transform: scale(1.05);
-}
-
-.po_item .content {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: var(--overlay-color);
-    z-index: 1;
+/* ── BANNER ── */
+.portfolio_banner {
+    background: linear-gradient(135deg, #060c1a 0%, #0d1f3d 100%);
+    border-bottom: 1px solid var(--border);
+    min-height: 38vh;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
     align-items: center;
-    padding: 20px;
-    transition: opacity 0.35s ease;
-    opacity: 0;
+    overflow: hidden;
+    position: relative;
 }
 
-.po_item .content p {
+.portfolio_banner_inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.portfolio_ghost {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Marcellus, serif;
+    font-size: clamp(6rem, 20vw, 15rem);
+    color: rgba(201,168,76,0.04);
+    letter-spacing: 12px;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.pf_eyebrow {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 2;
+}
+
+.portfolio_banner_inner h1 {
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    color: var(--text);
+    line-height: 1.1;
+    position: relative;
+    z-index: 2;
+}
+
+.pf_divider {
+    width: 50px; height: 2px;
+    background: var(--gold);
+    margin: 18px 0;
+    position: relative; z-index: 2;
+}
+
+.portfolio_banner_inner p {
     font-size: 0.9rem;
-    color: var(--text-color);
-    margin-bottom: 18px;
+    color: var(--text-dim);
+    max-width: 500px;
+    line-height: 1.8;
+    position: relative; z-index: 2;
+}
+
+/* ── FILTER BAR ── */
+.filter_bar {
+    display: flex;
+    gap: 0;
+    padding: 0 40px;
+    max-width: 1200px;
+    margin: 48px auto 0;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+}
+
+.filter_btn {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 16px 24px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: -1px;
+}
+
+.filter_btn:hover { color: var(--text); }
+.filter_btn.active {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+}
+
+/* ── GRID ── */
+.portfolio_grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 40px 100px;
+    columns: 3 300px;
+    column-gap: 20px;
+}
+
+.pf_card {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    transition: border-color 0.3s, transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.pf_card:hover {
+    border-color: var(--border-hi);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+}
+
+.pf_img_wrap { overflow: hidden; line-height: 0; }
+
+.pf_img_wrap img {
+    width: 100%;
+    display: block;
+    transition: transform 0.6s ease;
+    object-fit: cover;
+}
+
+.pf_card:hover .pf_img_wrap img { transform: scale(1.06); }
+
+/* Overlay */
+.pf_overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--overlay);
+    display: flex;
+    align-items: flex-end;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.pf_card:hover .pf_overlay { opacity: 1; }
+
+.pf_overlay_inner {
+    padding: 28px 24px;
+    width: 100%;
+}
+
+.pf_category {
+    display: block;
+    font-size: 0.6rem;
+    letter-spacing: 4px;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.pf_title {
+    font-size: 0.9rem;
+    color: var(--text);
     line-height: 1.5;
-    font-style: italic;
-    opacity: 0.9;
+    margin-bottom: 16px;
 }
 
-.po_item:hover {
-    box-shadow: 0 14px 35px rgba(0,0,0,0.4);
-    transform: translateY(-4px);
-    border-color: rgba(204,0,0,0.3);
-}
-
-.po_item:hover .content {
-    opacity: 1;
-}
-
-.po_item .content a {
-    background: transparent;
-    border: 2px solid var(--text-color);
-    padding: 8px 22px;
-    text-align: center;
-    font-size: 0.82rem;
+.pf_btn {
+    font-size: 0.72rem;
+    font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--text-color);
+    color: var(--bg);
+    background: var(--gold);
+    padding: 9px 20px;
     text-decoration: none;
-    transition: all 0.3s ease;
-    margin-top: 5px;
+    display: inline-block;
+    transition: background 0.2s;
+}
+.pf_btn:hover { background: var(--gold-lt); color: var(--bg); }
+
+.pf_empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--text-mute);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 60px;
 }
 
-.po_item .content a:hover {
-    background: #cc0000;
-    border-color: #cc0000;
-    color: #fff;
+@media (max-width: 768px) {
+    .portfolio_grid { columns: 2 220px; padding: 32px 20px 70px; }
+    .filter_bar { padding: 0 20px; }
+    .portfolio_banner_inner { padding: 40px 24px; }
+}
+
+@media (max-width: 480px) {
+    .portfolio_grid { columns: 1; }
+    .filter_bar { gap: 0; overflow-x: auto; flex-wrap: nowrap; }
+    .filter_btn { white-space: nowrap; padding: 14px 16px; }
 }

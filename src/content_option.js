@@ -1,208 +1,168 @@
-const logotext = "DIWAS";
+const logotext = "PANDEY";
+
 const meta = {
-    title: "Diwas Basnet",
-    description: "I'm Diwas Basnet — Video Agency Owner & Professional Video Editor based in Nepal.",
+    title: "Binav Pandey — CEO & Founder, Pandey Corporation",
+    description: "Binav Pandey is the CEO & Founder of Pandey Corporation — a multi-industry conglomerate leading in Information Technology and Consumer Goods.",
 };
 
 const introdata = {
-    title: "I'm Diwas Basnet",
+    title_line1: "BINAV",
+    title_line2: "PANDEY",
     animated: {
-        first: "Video Agency Owner",
-        second: "Professional Video Editor",
-        third: "Visual Storyteller",
+        first: "CEO & Founder",
+        second: "Visionary Entrepreneur",
+        third: "Industry Builder",
     },
-    description: "I craft compelling video content that drives results. From cinematic edits and brand films to social media content and motion graphics — I turn raw footage into powerful stories.",
-    your_img_url: "/diwas.png",
+    description: "Founder of Pandey Corporation — a growing conglomerate spanning Information Technology and Consumer Goods. Building institutions that create value, generate opportunity, and shape the future of business in Nepal.",
+    your_img_url: "/binav.png",
 };
 
 const dataabout = {
-    title: "A bit about myself",
-    aboutme: "I'm Diwas Basnet, a passionate video editor and founder of a video production agency. With years of experience crafting high-impact video content for brands, YouTubers, and businesses worldwide, I specialize in turning raw footage into cinematic masterpieces. My agency delivers everything from short-form social media reels to full-scale brand documentaries. I'm driven by the belief that every frame tells a story — and I'm here to make yours unforgettable.",
+    title: "The Story",
+    aboutme: "I'm Binav Pandey — entrepreneur, strategist, and founder of Pandey Corporation. With over a decade of experience building and scaling businesses across Information Technology and Consumer Goods, I've established Pandey Corporation as a trusted name in Nepal's evolving landscape.",
+    aboutme2: "My philosophy is rooted in long-term value creation, sustainable growth, and empowering people. I believe every great enterprise begins with a bold vision — and the discipline to execute it, one deliberate step at a time.",
+    photo: "/binav.png",
 };
 
 const worktimeline = [
     {
-        jobtitle: "Founder & CEO",
-        where: "Basnet Video Agency",
-        date: "2022 – Present",
+        jobtitle: "CEO & Founder",
+        where: "Pandey Corporation",
+        date: "2014 – Present",
+        desc: "Founded and scaled a multi-division conglomerate spanning IT solutions and consumer goods across Nepal and the region.",
     },
     {
-        jobtitle: "Senior Video Editor",
-        where: "Creative Studio Nepal",
-        date: "2020 – 2022",
+        jobtitle: "Director of Operations",
+        where: "NepalTech Solutions Pvt. Ltd.",
+        date: "2011 – 2014",
+        desc: "Led operations and growth strategy for one of Nepal's fastest-growing IT services firms.",
     },
     {
-        jobtitle: "Freelance Video Editor",
-        where: "Upwork / Fiverr",
-        date: "2018 – 2020",
+        jobtitle: "Business Development Manager",
+        where: "Himalayan Trade & Commerce",
+        date: "2008 – 2011",
+        desc: "Managed bilateral trade relationships and built distribution networks across Nepal and India.",
     },
 ];
 
 const skills = [
+    { name: "Corporate Leadership & Strategy", value: 96 },
+    { name: "Business Development & Growth", value: 92 },
+    { name: "Information Technology Management", value: 85 },
+    { name: "Supply Chain & Operations", value: 88 },
+    { name: "Investment & Financial Strategy", value: 82 },
+];
+
+const industries = [
     {
-        name: "Adobe Premiere Pro",
-        value: 95,
+        icon: "💻",
+        title: "IT Division",
+        subtitle: "Technology & Software",
+        description: "End-to-end IT services — enterprise software, cloud infrastructure, cybersecurity, and digital transformation for businesses of all scales.",
     },
     {
-        name: "After Effects & Motion Graphics",
-        value: 90,
-    },
-    {
-        name: "DaVinci Resolve (Color Grading)",
-        value: 88,
-    },
-    {
-        name: "Adobe Audition (Sound Design)",
-        value: 80,
-    },
-    {
-        name: "Video Strategy & Direction",
-        value: 85,
+        icon: "📦",
+        title: "Goods Division",
+        subtitle: "Consumer Goods & Retail",
+        description: "Sourcing, distribution, and retail of quality consumer products across Nepal through a robust and reliable supply chain network.",
     },
 ];
 
 const services = [
     {
-        title: "Professional Video Editing",
-        description: "Full-service video editing for YouTube channels, brands, and creators. Cinematic cuts, seamless transitions, and engaging pacing that keeps audiences hooked.",
+        number: "01",
+        title: "IT Solutions & Software",
+        description: "Enterprise software development, cloud infrastructure, and managed IT support for businesses of all scales.",
     },
     {
-        title: "Color Grading & Color Correction",
-        description: "Transform the mood and tone of your footage with professional color grading using DaVinci Resolve. From natural corrections to cinematic looks.",
+        number: "02",
+        title: "Consumer Goods & Retail",
+        description: "Quality consumer product distribution and retail operations across Nepal through our robust supply chain.",
     },
     {
-        title: "Motion Graphics & VFX",
-        description: "Eye-catching motion graphics, animated titles, lower thirds, intros/outros, and visual effects using Adobe After Effects.",
+        number: "03",
+        title: "Digital Transformation",
+        description: "Helping traditional businesses transition into the digital age with strategic advisory and technology integration.",
     },
     {
-        title: "Social Media Video Content",
-        description: "Short-form video editing for Instagram Reels, TikTok, YouTube Shorts — optimized for engagement, trends, and platform algorithms.",
+        number: "04",
+        title: "Strategic Business Dev",
+        description: "Identifying and executing high-value growth — joint ventures, market expansion, and strategic partnerships.",
     },
     {
-        title: "Brand & Corporate Video Production",
-        description: "Full video production and post-production for corporate videos, product launches, brand documentaries, and promotional content.",
+        number: "05",
+        title: "Supply Chain & Logistics",
+        description: "Optimising end-to-end supply chains with data-driven logistics solutions and operational efficiency frameworks.",
+    },
+    {
+        number: "06",
+        title: "Corporate Investment",
+        description: "Active investment in early-stage startups and growth companies aligned with our vision for Nepal's digital future.",
     },
 ];
 
 const dataportfolio = [
-    {
-        img: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?fit=crop&w=400&q=80",
-        description: "Brand Documentary — 5M+ views across platforms",
-        link: "#",
-    },
-    {
-        img: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?fit=crop&w=400&h=800&q=80",
-        description: "Cinematic Travel Film — Nepal Himalaya Series",
-        link: "#",
-    },
-    {
-        img: "https://images.unsplash.com/photo-1536240478700-b869ad10e2ab?fit=crop&w=400&q=80",
-        description: "Music Video Edit — Color Graded with DaVinci Resolve",
-        link: "#",
-    },
-    {
-        img: "https://images.unsplash.com/photo-1485846234645-a62644f84728?fit=crop&w=400&h=600&q=80",
-        description: "Short Film Post-Production — Indie Drama",
-        link: "#",
-    },
-    {
-        img: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?fit=crop&w=400&h=300&q=80",
-        description: "YouTube Channel Management — 100K Subscriber Brand",
-        link: "#",
-    },
-    {
-        img: "https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?fit=crop&w=400&h=700&q=80",
-        description: "Corporate Promo Video — Tech Startup Launch",
-        link: "#",
-    },
-    {
-        img: "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?fit=crop&w=400&h=600&q=80",
-        description: "Cinematic Commercial — Luxury Fashion Brand",
-        link: "#",
-    },
-    {
-        img: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?fit=crop&w=400&h=300&q=80",
-        description: "Event Highlight Reel — International Film Festival",
-        link: "#",
-    },
-    {
-        img: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?fit=crop&w=400&q=80",
-        description: "Motion Graphics Package — News Channel Branding",
-        link: "#",
-    },
-    {
-        img: "https://images.unsplash.com/photo-1518929458119-e5bf444c30f4?fit=crop&w=400&h=550&q=80",
-        description: "Social Media Campaign — 2M+ Reel Views",
-        link: "#",
-    },
-    {
-        img: "https://images.unsplash.com/photo-1616469829581-73993eb86b02?fit=crop&w=400&q=80",
-        description: "Color Grade Showreel — Cinematic LUT Package",
-        link: "#",
-    },
-    {
-        img: "https://images.unsplash.com/photo-1598387993441-a364f854cffd?fit=crop&w=400&h=700&q=80",
-        description: "Documentary Series — Cultural Heritage of Nepal",
-        link: "#",
-    },
+    { img: "https://images.unsplash.com/photo-1497366216548-37526070297c?fit=crop&w=600&q=80", description: "Enterprise Software Platform — Pandey IT Division", link: "#", category: "it" },
+    { img: "https://images.unsplash.com/photo-1551434678-e076c223a692?fit=crop&w=600&q=80", description: "Digital Transformation Initiative — 40+ Clients", link: "#", category: "it" },
+    { img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?fit=crop&w=600&q=80", description: "Regional Consumer Goods Distribution Network", link: "#", category: "goods" },
+    { img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?fit=crop&w=600&q=80", description: "National Business Expansion Programme", link: "#", category: "corporate" },
+    { img: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?fit=crop&w=600&q=80", description: "Cybersecurity Solutions — Government Contracts", link: "#", category: "it" },
+    { img: "https://images.unsplash.com/photo-1553484771-047a44eee27a?fit=crop&w=600&q=80", description: "Retail Chain Expansion — 15 New Outlets", link: "#", category: "goods" },
+    { img: "https://images.unsplash.com/photo-1488229297570-58520851e868?fit=crop&w=600&q=80", description: "Cloud Infrastructure — 99.9% Uptime Guarantee", link: "#", category: "it" },
+    { img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?fit=crop&w=600&q=80", description: "Leadership Summit Nepal 2023 — Keynote Speaker", link: "#", category: "corporate" },
+    { img: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?fit=crop&w=600&q=80", description: "Innovation Lab — Incubating Tech Startups", link: "#", category: "investment" },
+    { img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?fit=crop&w=600&q=80", description: "CSR Programme — 1,000+ Community Beneficiaries", link: "#", category: "corporate" },
+    { img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?fit=crop&w=600&q=80", description: "Nepal–India Export Trade Programme", link: "#", category: "goods" },
+    { img: "https://images.unsplash.com/photo-1553484771-047a44eee27a?fit=crop&w=600&q=80", description: "Series A Investment — PropTech Startup", link: "#", category: "investment" },
 ];
 
 const datastats = [
-    { value: "200+", description: "Projects Completed" },
-    { value: "50+", description: "Happy Clients" },
-    { value: "6+", description: "Years Experience" },
-    { value: "10M+", description: "Views Generated" },
+    { value: "6+",   description: "Business Divisions" },
+    { value: "500+", description: "Employees Nationwide" },
+    { value: "10+",  description: "Years of Growth" },
+    { value: "40+",  description: "Corporate Clients" },
 ];
 
 const testimonials = [
     {
-        name: "Alex Johnson",
-        role: "YouTube Creator — 500K Subscribers",
-        text: "Diwas transformed my raw footage into cinematic masterpieces. My channel grew from 50K to 500K subscribers after working with his agency. Every video feels like a Hollywood production.",
-        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=100&h=100&q=80",
+        name: "Rajesh Shrestha",
+        role: "Managing Director, Shrestha Holdings",
+        text: "Binav Pandey is one of the most forward-thinking business leaders I've had the privilege of working with. His vision for Pandey Corporation is about building lasting institutions that uplift Nepal's economy.",
+        avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?fit=crop&w=100&h=100&q=80",
     },
     {
-        name: "Sarah Williams",
-        role: "CEO, Luminary Brands",
-        text: "Our brand film by Diwas went viral with over 2M views in the first week. The color grading, pacing, and storytelling were absolutely stunning. Highly recommend Basnet Video Agency.",
-        avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?fit=crop&w=100&h=100&q=80",
+        name: "Priya Acharya",
+        role: "Head of Digital Partnerships, TechNepal",
+        text: "Working with Pandey Corporation's IT division completely transformed our backend infrastructure. Binav's team delivered on every promise — on time, within budget, with exceptional quality.",
+        avatar: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?fit=crop&w=100&h=100&q=80",
     },
     {
-        name: "Marcus Chen",
-        role: "Travel Vlogger — 1M Subscribers",
-        text: "The cinematographic quality of my edits completely transformed since I started working with Diwas. He understands the story behind each clip. Pure excellence and professionalism.",
-        avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?fit=crop&w=100&h=100&q=80",
+        name: "Anuj Maharjan",
+        role: "CEO, HimalayanGoods Pvt. Ltd.",
+        text: "Pandey Corporation's goods distribution network is second to none in Nepal. Since partnering with Binav, our supply chain efficiency improved by 60%. His strategic guidance alone is worth its weight in gold.",
+        avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?fit=crop&w=100&h=100&q=80",
     },
 ];
 
 const contactConfig = {
-    YOUR_EMAIL: "diwasbasnet@gmail.com",
-    YOUR_FONE: "+977-9800000000",
-    description: "Have a project in mind? Let's create something amazing together. Whether it's a brand video, YouTube content, or a full production — I'm ready to bring your vision to life.",
+    YOUR_EMAIL: "contact@pandeycorporation.com",
+    YOUR_FONE: "+977-01-4000000",
+    YOUR_ADDRESS: "Kathmandu, Nepal",
+    description: "Have a business inquiry, partnership proposal, or investment opportunity? We respond to every serious enquiry within 48 hours.",
     YOUR_SERVICE_ID: "service_id",
     YOUR_TEMPLATE_ID: "template_id",
     YOUR_USER_ID: "user_id",
 };
 
 const socialprofils = {
-    facebook: "https://facebook.com",
     linkedin: "https://linkedin.com",
     twitter: "https://twitter.com",
-    youtube: "https://youtube.com",
+    facebook: "https://facebook.com",
     instagram: "https://instagram.com",
 };
 
 export {
-    meta,
-    dataabout,
-    dataportfolio,
-    worktimeline,
-    skills,
-    services,
-    introdata,
-    contactConfig,
-    socialprofils,
-    logotext,
-    datastats,
-    testimonials,
+    meta, dataabout, dataportfolio, worktimeline, skills, services,
+    introdata, contactConfig, socialprofils, logotext, datastats,
+    testimonials, industries,
 };

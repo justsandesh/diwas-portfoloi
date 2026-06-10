@@ -1,106 +1,122 @@
 import React from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { Container, Row, Col } from "react-bootstrap";
-import {
-  dataabout,
-  meta,
-  worktimeline,
-  skills,
-  services,
-} from "../../content_option";
+import { dataabout, meta, worktimeline, skills, services } from "../../content_option";
 
 export const About = () => {
   return (
     <HelmetProvider>
-      <Container className="About-header">
+      <div className="about_page">
         <Helmet>
           <meta charSet="utf-8" />
           <title>About | {meta.title}</title>
           <meta name="description" content={meta.description} />
         </Helmet>
 
-        <Row className="mb-5 mt-3 pt-md-3">
-          <Col lg="8" data-aos="fade-right">
-            <h1 className="display-4 mb-4">About me</h1>
-            <hr className="t_border my-4 ml-0 text-left" />
-          </Col>
-        </Row>
-
-        {/* Bio */}
-        <Row className="sec_sp">
-          <Col lg="5" data-aos="fade-right">
-            <h3 className="color_sec py-4">{dataabout.title}</h3>
-          </Col>
-          <Col lg="7" className="d-flex align-items-center" data-aos="fade-left" data-aos-delay="100">
-            <div>
-              <p>{dataabout.aboutme}</p>
+        {/* ── Page Banner ── */}
+        <div className="about_banner" data-aos="fade-in">
+          <div className="about_banner_inner">
+            <span className="about_banner_ghost">ABOUT</span>
+            <div className="about_banner_text">
+              <span className="section_eyebrow_about">CEO &amp; Founder</span>
+              <h1>Binav Pandey</h1>
+              <div className="about_banner_divider" />
+              <p>Pandey Corporation — Kathmandu, Nepal</p>
             </div>
-          </Col>
-        </Row>
+          </div>
+        </div>
 
-        {/* Work Timeline */}
-        <Row className="sec_sp">
-          <Col lg="5" data-aos="fade-right">
-            <h3 className="color_sec py-4">Work Timeline</h3>
-          </Col>
-          <Col lg="7" data-aos="fade-left" data-aos-delay="100">
-            <table className="table caption-top">
-              <tbody>
-                {worktimeline.map((data, i) => (
-                  <tr key={i} data-aos="fade-up" data-aos-delay={i * 100}>
-                    <th scope="row">{data.jobtitle}</th>
-                    <td>{data.where}</td>
-                    <td>{data.date}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </Col>
-        </Row>
+        {/* ── Story ── */}
+        <section className="story_section">
+          <div className="story_inner">
+            <div className="story_image" data-aos="fade-right">
+              <img src={dataabout.photo} alt="Binav Pandey" />
+              <div className="story_img_accent" />
+            </div>
+            <div className="story_text" data-aos="fade-left" data-aos-delay="100">
+              <span className="section_eyebrow_about">{dataabout.title}</span>
+              <h2>Building institutions,<br />not just companies.</h2>
+              <p>{dataabout.aboutme}</p>
+              <p>{dataabout.aboutme2}</p>
+            </div>
+          </div>
+        </section>
 
-        {/* Skills */}
-        <Row className="sec_sp">
-          <Col lg="5" data-aos="fade-right">
-            <h3 className="color_sec py-4">Skills</h3>
-          </Col>
-          <Col lg="7" data-aos="fade-left" data-aos-delay="100">
-            {skills.map((data, i) => (
-              <div key={i} data-aos="fade-up" data-aos-delay={i * 80}>
-                <h3 className="progress-title">{data.name}</h3>
-                <div className="progress">
-                  <div
-                    className="progress-bar"
-                    style={{ width: `${data.value}%` }}
-                  >
-                    <div className="progress-value">{data.value}%</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </Col>
-        </Row>
-
-        {/* Services */}
-        <Row className="sec_sp">
-          <Col lg="5" data-aos="fade-right">
-            <h3 className="color_sec py-4">Services</h3>
-          </Col>
-          <Col lg="7" data-aos="fade-left" data-aos-delay="100">
-            {services.map((data, i) => (
+        {/* ── Career Timeline ── */}
+        <section className="timeline_section">
+          <div className="timeline_header" data-aos="fade-up">
+            <span className="section_eyebrow_about">Experience</span>
+            <h2>Career Timeline</h2>
+          </div>
+          <div className="timeline_list">
+            {worktimeline.map((item, i) => (
               <div
-                className="service_ py-4"
+                className="timeline_item"
                 key={i}
                 data-aos="fade-up"
                 data-aos-delay={i * 100}
               >
-                <h5 className="service__title">{data.title}</h5>
-                <p className="service_desc">{data.description}</p>
+                <div className="timeline_dot" />
+                <div className="timeline_date">{item.date}</div>
+                <div className="timeline_content">
+                  <h3>{item.jobtitle}</h3>
+                  <span className="timeline_company">{item.where}</span>
+                  <p>{item.desc}</p>
+                </div>
               </div>
             ))}
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </section>
+
+        {/* ── Core Competencies ── */}
+        <section className="skills_section">
+          <div className="skills_header" data-aos="fade-up">
+            <span className="section_eyebrow_about">Leadership Profile</span>
+            <h2>Core Competencies</h2>
+          </div>
+          <div className="skills_grid">
+            {skills.map((s, i) => (
+              <div
+                className="skill_item"
+                key={i}
+                data-aos="fade-up"
+                data-aos-delay={i * 60}
+              >
+                <div className="skill_header_row">
+                  <span className="skill_name">{s.name}</span>
+                  <span className="skill_pct">{s.value}%</span>
+                </div>
+                <div className="skill_track">
+                  <div className="skill_fill" style={{ width: `${s.value}%` }} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ── Business Divisions ── */}
+        <section className="divisions_section">
+          <div className="divisions_header" data-aos="fade-up">
+            <span className="section_eyebrow_about">What We Do</span>
+            <h2>Business Divisions</h2>
+          </div>
+          <div className="divisions_grid">
+            {services.map((svc, i) => (
+              <div
+                className="division_card"
+                key={i}
+                data-aos="fade-up"
+                data-aos-delay={(i % 3) * 80}
+              >
+                <span className="div_number">{svc.number}</span>
+                <h4>{svc.title}</h4>
+                <p>{svc.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+      </div>
     </HelmetProvider>
   );
 };
